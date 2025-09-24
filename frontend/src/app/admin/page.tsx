@@ -34,27 +34,27 @@ export default function AdminPage() {
     <div className="max-w-3xl mx-auto p-6 space-y-4">
       <h1 className="text-2xl font-semibold">Admin</h1>
       <div className="grid sm:grid-cols-3 gap-3">
-        <div className="border rounded p-3 bg-white">
-          <div className="text-sm text-gray-500">Jobs</div>
+        <div className="border rounded p-3 bg-dark bg-color bg-gray-700">
+          <div className="text-sm text-white-500">Jobs</div>
           <div className="text-2xl font-semibold">{stats?.jobs ?? '—'}</div>
         </div>
-        <div className="border rounded p-3 bg-white sm:col-span-2">
-          <div className="text-sm text-gray-500">Last added</div>
+        <div className="border rounded p-3 bg-gray-700 sm:col-span-2">
+          <div className="text-sm text-white-500">Last added</div>
           <div className="text-lg">{stats?.last_added ? new Date(stats.last_added).toLocaleString() : '—'}</div>
         </div>
       </div>
-      <div className="border rounded p-4 bg-white space-y-3">
+      <div className="border rounded p-4 bg-gray-700 space-y-3">
         <div className="grid sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-sm mb-1">Keywords</label>
-            <input value={keywords} onChange={e=>setKeywords(e.target.value)} className="w-full border rounded px-3 py-2" />
+            <input value={keywords} onChange={e=>setKeywords(e.target.value)} className="w-full border rounded px-3 py-2 bg-gray-800" />
           </div>
           <div>
             <label className="block text-sm mb-1">Location</label>
-            <input value={location} onChange={e=>setLocation(e.target.value)} className="w-full border rounded px-3 py-2" />
+            <input value={location} onChange={e=>setLocation(e.target.value)} className="w-full border rounded px-3 py-2 bg-gray-800" />
           </div>
         </div>
-        <button disabled={loading} onClick={runScrape} className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-60">{loading ? 'Starting...' : 'Run scrape now'}</button>
+        <button disabled={loading} onClick={runScrape} className="px-4 py-2 from-white bg-purple-600 to to-purple-700 text-white rounded disabled:opacity-60">{loading ? 'Starting...' : 'Run scrape now'}</button>
       </div>
     </div>
   );
